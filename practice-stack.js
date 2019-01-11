@@ -1,15 +1,22 @@
-stack = [1,2,3,4,5,6,7,8,9];
+let LQClass = require('./stacks-queues');
+let stack = new LQClass.StackClass();
+let queue = new LQClass.QueueClass();
 
-console.log('lilo')
 
-for( let i = stack.length; i>0; i--){
-console.log(stack.pop())
+for(let i = 0; i<10; i++){
+stack.push(i);
+queue.queue(i);
 }
-console.log('fifo')
 
-stack2 = [1,2,3,4,5,6,7,8,9];
-
-let stop = stack2.length;
-for(let i =0; i<stop; i ++){
-    console.log(stack2.shift())
+console.log('\n')
+console.log('Stack')
+for(let i = 0; i<10; i++){
+    stack.peak();
+    stack.pop();
+}
+console.log('\n')
+console.log('Queue')
+for(let i = 0; i<10; i++){
+    queue.peak();
+    queue.dequeue();
 }
