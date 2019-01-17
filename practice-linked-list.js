@@ -111,19 +111,14 @@ class LinkedList{
 
 }
 
-let l1 = new LinkedList();
-l1.add(1);
-l1.add(2);
-l1.add(3);
-l1.add(4);
-l1.add(5);
-l1.add(6);
-l1.add(7);
-l1.add(8);
-l1.add(9);
+let li = new LinkedList();
 
+for (let i =0; i<10; i++){
+    li.add(i);
+}
 
-let current = l1.head;
+let current = li.head;
+
 while(current.next){
     console.log(current.value)
     current = current.next;
