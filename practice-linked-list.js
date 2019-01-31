@@ -113,14 +113,19 @@ class LinkedList{
 
 let li = new LinkedList();
 
+
+
+//-------Makes a list---------//
 for (let i =0; i<10; i++){
     li.add(i);
 }
 
-let current = li.head;
+//-----------Put traversal here----//
 
+let current = li.head;
 while(current.next){
-    console.log(current.value)
+    console.log(current.value);
     current = current.next;
 }
+
 console.log(current.value);

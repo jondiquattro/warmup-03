@@ -10,13 +10,19 @@ queue.queue(i);
 
 console.log('\n')
 console.log('Stack')
-for(let i = 0; i<10; i++){
-    stack.peak();
-    stack.pop();
+
+while(stack.length){
+    console.log(stack.pop().value);
 }
+
+
 console.log('\n')
 console.log('Queue')
-for(let i = 0; i<10; i++){
-    queue.peak();
-    queue.dequeue();
+
+
+//-------PUT QUEUES HERE-------//
+
+while(queue.length){
+
+    console.log(queue.dequeue().value);
 }

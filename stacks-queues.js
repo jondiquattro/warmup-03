@@ -70,9 +70,12 @@ class Node {
         this.length ++;
       }
       dequeue(){
+        // if(this.front.prev ===null){
+        //   return;
+        // }
         let off = this.front;
         this.front = this.front.prev;
-        this.length ++;
+        this.length --;
         return off;
       }
       peak(){
