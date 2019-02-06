@@ -1,7 +1,7 @@
 'use strict';
 
 
-
+//---------Premade Trees---------//
 class Node {
     constructor(value){
         this.value =value;
@@ -27,68 +27,55 @@ b.right =e;
 c.left =f;
 
 
+//--------Premade Trees---------------//
+
 function preOrder(root){
-    // console.log(root);
-    const result = [];
-    let _walk =(node)=>{
+const result = [];
 
-        result.push(node.value);
+function _walk(node){
+    result.push(node.value)
 
-        if(node.left){_walk(node.left)}
+    if(node.left){_walk(node.left)};
 
-        if(node.right){_walk(node.right)}
-    }
-    _walk(root);
-    // return result;
-    console.log('pre order ',result);
+    if(node.right){_walk(node.right)}
+
+}
+_walk(root);
+
+return result;
 }
 
-//   console.log(root);
-
-preOrder(a);
-
+console.log(preOrder(a));
 
 function postOrder(root){
 
-    const postResult=[];
+    const postResult = [];
 
-    let _walk =(node)=>{
-
+    function _walk(node){
         if(node.left){_walk(node.left)};
-
         if(node.right){_walk(node.right)};
-
         postResult.push(node.value);
-
+        
     }
-
     _walk(root);
-
-    console.log('post order ', postResult);
+    return postResult;
 }
 
-
-
-postOrder(a);
-
-
+console.log(postOrder(a))
 
 
 function inLine(root){
-
     const inResult = [];
 
-    let _walk=(node)=>{
-        if(node.left){_walk(node.left)}
+    function _walk(node){
+        if(node.left){_walk(node.left)};
         inResult.push(node.value);
-
         if(node.right){_walk(node.right)};
+
     }
 
     _walk(root);
-
-    console.log('inline ', inResult);
+    return inResult;
 }
 
-
-inLine(a);
+console.log(inLine(a));
