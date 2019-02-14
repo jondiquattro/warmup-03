@@ -29,53 +29,52 @@ c.left =f;
 
 //--------Premade Trees---------------//
 
-function preOrder(root){
-const result = [];
+function preOrder(tree){
 
-function _walk(node){
-    result.push(node.value)
+    const preResult = [];
 
-    if(node.left){_walk(node.left)};
+    let _walk =(node)=>{
 
-    if(node.right){_walk(node.right)}
+        preResult.push(node.value);
 
+        if(node.right){_walk(node.right);}
+        if(node.left){_walk(node.left);}
+
+    }
+    _walk(tree)
+    return preResult;
 }
-_walk(root);
 
-return result;
+
+let inOrder=(root)=>{
+const inLineResult =[];
+    let _walk =(node)=>{
+        
+        if(node.right)_walk(node.right);
+        inLineResult.push(node.value);
+        if(node.left)_walk(node.left);
+    }
+
+    _walk(root);
+
+    return inLineResult;
 }
 
-console.log(preOrder(a));
-
-function postOrder(root){
-
+let postOrder =(root)=>{
     const postResult = [];
 
-    function _walk(node){
-        if(node.left){_walk(node.left)};
-        if(node.right){_walk(node.right)};
+    const _walk =(node)=>{
+        if(node.right)_walk(node.right);
+        if(node.left)_walk(node.left);
         postResult.push(node.value);
-        
     }
+
     _walk(root);
     return postResult;
 }
 
-console.log(postOrder(a))
 
+console.log(postOrder(a));
+console.log(inOrder(a));
+console.log(preOrder(a));
 
-function inLine(root){
-    const inResult = [];
-
-    function _walk(node){
-        if(node.left){_walk(node.left)};
-        inResult.push(node.value);
-        if(node.right){_walk(node.right)};
-
-    }
-
-    _walk(root);
-    return inResult;
-}
-
-console.log(inLine(a));

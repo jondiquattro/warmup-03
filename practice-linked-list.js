@@ -122,10 +122,11 @@ for (let i =0; i<10; i++){
 
 //-----------Put traversal here----//
 
-let current = li.head;
-while(current.next){
-    console.log(current.value);
-    current = current.next;
-}
+let cur = li.head;
 
-console.log(current.value);
+while(cur.next){
+    console.log(cur.value);
+cur = cur.next;
+}
+console.log(cur.value);
+
