@@ -14,10 +14,11 @@ queue.queue(i);
 console.log('\n')
 console.log('Stack')
 
-
 while(stack.length){
-    console.log(stack.pop().value);
+    stack.peak();
+    stack.pop();
 }
+
 
 console.log('\n')
 console.log('Queue')
@@ -26,7 +27,15 @@ console.log('Queue')
 //-------PUT QUEUES HERE-------//
 const qResult =[];
 while(queue.length){
-    qResult.push(queue.dequeue().value)
+    qResult.push(queue.dequeue().value);
 }
 
 console.log(qResult)
+
+
+
+//when rendering a map in redux you must provide a key
+//<ul>
+    //{this.props.players.map( (record, idx)=>{
+        // <li> key={idx}>{record.name}</li>
+    // })}
